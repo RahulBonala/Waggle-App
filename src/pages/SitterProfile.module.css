@@ -1,0 +1,137 @@
+.container {
+    padding-bottom: 4rem;
+}
+
+.heroWrapper {
+    height: 300px;
+    position: relative;
+    background-color: #eee;
+    margin-bottom: 2rem;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+.heroContent {
+    position: absolute;
+    bottom: 2rem;
+    color: var(--color-white);
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.trustSection {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.trustItem {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+}
+
+.text {
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.rateCard {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.review {
+    background: var(--color-bg-light);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 90px;
+    height: fit-content;
+}
+
+.bookingCard {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}
+
+.input {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+@media (min-width: 768px) {
+    .layout {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .trustSection {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
