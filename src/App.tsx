@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './pages/LandingPage';
@@ -9,37 +9,44 @@ import { SitterProfile } from './pages/SitterProfile';
 import { Checkout } from './pages/Checkout';
 import { Tracking } from './pages/Tracking';
 import { PaymentComplete } from './pages/PaymentComplete';
+import { BecomeSitterPage } from './pages/BecomeSitterPage';
+import { UserProfile } from './pages/UserProfile';
+import { Notifications } from './pages/Notifications';
 import { AuthModal } from './components/AuthModal';
+import { useAppStore } from './store/useAppStore';
+
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const { user } = useAppStore();
+  if (!user) return <Navigate to="/" />;
+  return <>{children}</>;
+};
 
 function App() {
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const [user, setUser] = useState<{ name: string; mobile: string } | null>(null);
-
-  const handleLoginSuccess = (userData: { name: string; mobile: string }) => {
-    setUser(userData);
-    setIsAuthOpen(false);
-  };
+  const { user, isAuthModalOpen, setAuthModalOpen } = useAppStore();
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar onLoginClick={() => setIsAuthOpen(true)} user={user} />
-        <main className="flex-grow">
+      <div className="flex flex-col min-h-screen bg-white">
+        <Toaster position="top-center" />
+        <Navbar />
+        <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={user ? <Navigate to="/dashboard" /> : <LandingPage />} />
-            <Route path="/dashboard" element={user ? <Dashboard user={user} /> : <Navigate to="/" />} />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/search" element={<SearchResults />} />
             <Route path="/sitter/:id" element={<SitterProfile />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/tracking" element={<Tracking />} />
-            <Route path="/payment-complete" element={<PaymentComplete />} />
+            <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+            <Route path="/tracking/:bookingId" element={<ProtectedRoute><Tracking /></ProtectedRoute>} />
+            <Route path="/payment-complete" element={<ProtectedRoute><PaymentComplete /></ProtectedRoute>} />
+            <Route path="/become-a-sitter" element={<BecomeSitterPage />} />
+            <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+            <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
           </Routes>
         </main>
         <Footer />
         <AuthModal
-          isOpen={isAuthOpen}
-          onClose={() => setIsAuthOpen(false)}
-          onLoginSuccess={handleLoginSuccess}
+          isOpen={isAuthModalOpen}
+          onClose={() => setAuthModalOpen(false)}
         />
       </div>
     </Router>
@@ -47,3 +54,4 @@ function App() {
 }
 
 export default App
+
