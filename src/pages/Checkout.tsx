@@ -20,7 +20,8 @@ export const Checkout: React.FC = () => {
         setIsProcessing(true);
         setTimeout(() => {
             setIsProcessing(false);
-            navigate('/payment-complete');
+            // Navigate to live tracking to show off the new feature!
+            navigate('/tracking/BK-WGL-92837');
         }, 2000);
     };
 
