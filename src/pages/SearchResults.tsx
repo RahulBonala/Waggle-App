@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Filter, MapPin, Star, ShieldCheck, 
   ChevronDown, SlidersHorizontal,
@@ -10,6 +11,7 @@ import { Button } from '../components/Button';
 import { motion } from 'framer-motion';
 
 export const SearchResults: React.FC = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('All');
   const [showFilters, setShowFilters] = useState(false);
 
@@ -139,6 +141,7 @@ export const SearchResults: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -4 }}
+                  onClick={() => navigate(`/sitter/${sitter.id}`)}
                   className="bg-white rounded-[2.5rem] border-2 border-gray-100 p-6 flex flex-col md:flex-row gap-6 hover:border-primary/30 transition-all shadow-sm group cursor-pointer"
                 >
                   <div className="w-full md:w-32 h-48 md:h-32 flex-shrink-0 rounded-[2rem] overflow-hidden relative">
@@ -146,7 +149,13 @@ export const SearchResults: React.FC = () => {
                     <div className="absolute top-2 left-2 bg-emerald-500 text-white p-1 rounded-full shadow-lg">
                       <CheckCircle2 size={12} fill="white" className="text-emerald-500" />
                     </div>
-                    <button className="absolute top-2 right-2 p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:text-primary transition-colors">
+                    <button 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            // Handle favorite
+                        }}
+                        className="absolute top-2 right-2 p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:text-primary transition-colors"
+                    >
                       <Heart size={16} />
                     </button>
                   </div>
