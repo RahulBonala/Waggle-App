@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Dog, Calendar, Scissors, Stethoscope, 
@@ -16,15 +16,13 @@ import { clsx } from 'clsx';
 export const Dashboard: React.FC = () => {
   const { user, pets, bookings } = useAppStore();
   const navigate = useNavigate();
-  const [greeting, setGreeting] = useState('');
-  const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
+  const greeting = (() => {
     const hour = new Date().getHours();
-    if (hour < 12) setGreeting('Good Morning');
-    else if (hour < 17) setGreeting('Good Afternoon');
-    else setGreeting('Good Evening');
-  }, []);
+    if (hour < 12) return 'Good Morning';
+    if (hour < 17) return 'Good Afternoon';
+    return 'Good Evening';
+  })();
+  const [copied, setCopied] = useState(false);
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText('WAGGLE20');

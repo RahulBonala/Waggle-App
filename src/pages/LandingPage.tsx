@@ -13,9 +13,9 @@ import { mockSitters, REVIEWS, SERVICES } from '../data/mockData';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-// @ts-ignore
+// @ts-expect-error -- swiper CSS imports have no type declarations
 import 'swiper/css';
-// @ts-ignore
+// @ts-expect-error -- swiper CSS imports have no type declarations
 import 'swiper/css/pagination';
 
 // Import hero image (placeholder or generated)
@@ -66,7 +66,7 @@ export const LandingPage: React.FC = () => {
                     <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Location</label>
                     <div className="flex items-center gap-2 font-bold text-gray-800">
                       <MapPin size={18} className="text-primary" />
-                      <input type="text" placeholder="Your City" className="bg-transparent outline-none w-full placeholder:text-gray-300" />
+                      <input type="text" placeholder="Your City" aria-label="Search city" className="bg-transparent outline-none w-full placeholder:text-gray-300" />
                     </div>
                   </div>
                   <div className="p-2">

@@ -17,7 +17,7 @@ export const Tracking: React.FC = () => {
     const [showSummary, setShowSummary] = useState(false);
 
     useEffect(() => {
-        let interval: any;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (isWalking) {
             interval = setInterval(() => {
                 setTime(prev => prev + 1);

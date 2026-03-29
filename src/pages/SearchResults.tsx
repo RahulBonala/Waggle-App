@@ -152,8 +152,8 @@ export const SearchResults: React.FC = () => {
                     <button 
                         onClick={(e) => {
                             e.stopPropagation();
-                            // Handle favorite
                         }}
+                        aria-label="Add to favorites"
                         className="absolute top-2 right-2 p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:text-primary transition-colors"
                     >
                       <Heart size={16} />

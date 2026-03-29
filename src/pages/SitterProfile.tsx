@@ -59,10 +59,10 @@ export const SitterProfile: React.FC = () => {
                 </div>
 
                 <div className="flex gap-3 mb-4">
-                    <Button variant="outline" className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-gray-900 rounded-2xl">
+                    <Button variant="outline" aria-label="Share profile" className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-gray-900 rounded-2xl">
                         <Share2 size={18} />
                     </Button>
-                    <Button variant="outline" className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-gray-900 rounded-2xl">
+                    <Button variant="outline" aria-label="Save to favorites" className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-gray-900 rounded-2xl">
                         <Heart size={18} />
                     </Button>
                 </div>
@@ -163,7 +163,7 @@ export const SitterProfile: React.FC = () => {
                                 {[
                                     { name: 'Dog Boarding', price: '₹499', period: 'per night', icon: Home },
                                     { name: 'Dog Walking', price: '₹199', period: 'per walk', icon: Dog },
-                                    { name: 'Pet Grooming', price: '₹799', period: 'per session', icon: Scissors as any },
+                                    { name: 'Pet Grooming', price: '₹799', period: 'per session', icon: Scissors },
                                     { name: 'Vet Visit', price: '₹999', period: 'per visit', icon: Shield }
                                 ].map((svc, i) => (
                                     <div key={i} className="flex items-center justify-between p-6 bg-gray-50 rounded-[2rem] border border-gray-100 hover:border-primary/20 transition-all group">
@@ -189,7 +189,7 @@ export const SitterProfile: React.FC = () => {
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {sitter.gallery.map((img, i) => (
                                     <div key={i} className="aspect-square rounded-[2rem] overflow-hidden group cursor-zoom-in">
-                                        <img src={img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                        <img src={img} alt={`Gallery photo ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                     </div>
                                 ))}
                                 <button className="aspect-square rounded-[2.5rem] bg-gray-50 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all group">

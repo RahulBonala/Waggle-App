@@ -55,6 +55,9 @@ export const Modal: React.FC<ModalProps> = ({
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
             className={clsx(
               'relative w-full bg-white rounded-3xl shadow-2xl overflow-hidden',
               maxWidthClasses[maxWidth]
@@ -66,6 +69,7 @@ export const Modal: React.FC<ModalProps> = ({
               {title && <h2 className="text-xl font-bold text-gray-900">{title}</h2>}
               <button
                 onClick={onClose}
+                aria-label="Close dialog"
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-500 hover:text-gray-900"
               >
                 <X size={24} />

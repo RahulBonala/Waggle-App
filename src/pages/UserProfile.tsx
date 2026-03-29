@@ -188,7 +188,7 @@ export const UserProfile: React.FC = () => {
                         name={pet.name}
                         breed={pet.breed}
                         age={pet.age}
-                        type={pet.type as any}
+                        type={pet.type as 'dog' | 'cat' | 'other'}
                         photo={pet.photo}
                         onEdit={() => {}}
                       />

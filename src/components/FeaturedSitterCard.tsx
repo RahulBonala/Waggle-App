@@ -35,7 +35,7 @@ export const FeaturedSitterCard: React.FC<FeaturedSitterCardProps> = ({
           <span className="text-xs font-bold text-gray-900">{rating}</span>
           <span className="text-[10px] text-gray-500 font-medium">({reviews})</span>
         </div>
-        <button className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-md rounded-full text-gray-400 hover:text-red-500 transition-colors shadow-sm">
+        <button aria-label="Add to favorites" className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-md rounded-full text-gray-400 hover:text-red-500 transition-colors shadow-sm">
           <Heart size={16} />
         </button>
         {isVerified && (

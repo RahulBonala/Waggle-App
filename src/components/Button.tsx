@@ -43,7 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
         className
       )}
       disabled={disabled || isLoading}
-      {...props as any}
+      {...props as React.ComponentPropsWithoutRef<typeof motion.button>}
 
     >
       {isLoading ? (

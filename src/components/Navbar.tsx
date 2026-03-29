@@ -140,6 +140,7 @@ export const Navbar: React.FC = () => {
           {user && <NotificationBell />}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             className="p-2 text-gray-700 hover:bg-gray-100 rounded-xl"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

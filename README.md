@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# Waggle India - Trusted Pet Care Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Waggle India is a pet care marketplace that connects pet parents with verified sitters, walkers, and groomers across Indian cities. Built with a mobile-first, modern UI for seamless booking and live tracking.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: React 19 + TypeScript (strict mode)
+- **Build Tool**: Vite 7
+- **Styling**: Tailwind CSS 4
+- **State Management**: Zustand
+- **Routing**: React Router v7
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Carousel**: Swiper
+- **Notifications**: React Hot Toast
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js >= 18
+- npm >= 9
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <repository-url>
+cd Waggle-App
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment Variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Copy the example environment file and fill in your values:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cp .env.example .env.local
 ```
+
+See `.env.example` for all available variables.
+
+### Development
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+### Linting & Type Checking
+
+```bash
+npm run lint          # ESLint
+npm run lint:fix      # ESLint with auto-fix
+npm run type-check    # TypeScript type checking
+```
+
+## Project Structure
+
+```
+src/
+├── assets/          # Static assets (images, SVGs)
+├── components/      # Reusable UI components
+│   ├── AuthModal    # Authentication flow modal
+│   ├── BookingCard  # Booking display card
+│   ├── Button       # Primary button component
+│   ├── Footer       # App footer
+│   ├── Input        # Form input component
+│   ├── Modal        # Generic modal wrapper
+│   ├── Navbar       # Navigation bar
+│   └── ...
+├── data/            # Mock data for development
+├── pages/           # Route page components
+│   ├── LandingPage  # Public landing page
+│   ├── Dashboard    # User dashboard
+│   ├── SearchResults# Sitter search
+│   ├── SitterProfile# Sitter detail page
+│   ├── Checkout     # Booking checkout
+│   ├── Tracking     # Live walk tracking
+│   └── ...
+├── store/           # Zustand state management
+├── App.tsx          # Root component with routing
+├── main.tsx         # Entry point
+└── index.css        # Global styles & Tailwind config
+```
+
+## Deployment
+
+Build the production bundle:
+
+```bash
+npm run build
+```
+
+The output is in the `dist/` directory, ready for deployment to any static hosting service (Vercel, Netlify, AWS S3 + CloudFront, etc.).
+
+## License
+
+Private - All rights reserved, Waggle India Solutions Private Limited.

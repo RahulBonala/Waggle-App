@@ -56,9 +56,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Smooth transitions */
-* {
-  transition-property: all;
+/* Smooth transitions for interactive elements */
+a, button, input, textarea, select,
+[class*="hover:"], [class*="focus:"] {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }

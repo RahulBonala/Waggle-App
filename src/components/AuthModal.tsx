@@ -28,7 +28,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   const { setUser } = useAppStore();
 
   useEffect(() => {
-    let interval: any;
+    let interval: ReturnType<typeof setInterval> | undefined;
     if (step === 'otp' && resendTimer > 0) {
       interval = setInterval(() => {
         setResendTimer((prev) => prev - 1);
@@ -277,7 +277,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                         ].map((item) => (
                           <button
                             key={item.type}
-                            onClick={() => setPetType(item.type as any)}
+                            onClick={() => setPetType(item.type as 'dog' | 'cat' | 'other')}
                             className={clsx(
                               'flex-1 flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all',
                               petType === item.type ? 'border-primary bg-primary/5 text-primary' : 'border-gray-100 hover:border-gray-200 text-gray-500'

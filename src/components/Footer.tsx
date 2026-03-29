@@ -30,7 +30,8 @@ export const Footer: React.FC = () => {
               <div className="flex gap-2">
                 <input 
                   type="email" 
-                  placeholder="your@email.com" 
+                  placeholder="your@email.com"
+                  aria-label="Email address"
                   className="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-primary/50 flex-grow"
                 />
                 <Button size="sm" className="rounded-xl px-4">Join</Button>
@@ -95,6 +96,7 @@ export const Footer: React.FC = () => {
               <a 
                 key={i} 
                 href="#" 
+                aria-label={['Instagram', 'Facebook', 'Twitter'][i]}
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all border border-white/5"
               >
                 <Icon size={18} />
