@@ -209,7 +209,10 @@ export const Dashboard: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <button className="w-full mt-8 text-sm font-bold text-primary hover:underline flex items-center justify-center gap-1">
+              <button
+                onClick={() => navigate('/notifications')}
+                className="w-full mt-8 text-sm font-bold text-primary hover:underline flex items-center justify-center gap-1"
+              >
                 View all activity <ArrowRight size={14} />
               </button>
             </div>

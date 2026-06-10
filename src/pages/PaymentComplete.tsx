@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../components/Button';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 export const PaymentComplete: React.FC = () => {
     const navigate = useNavigate();
@@ -213,7 +214,14 @@ export const PaymentComplete: React.FC = () => {
                             <span className="font-black italic">Submit Review</span>
                             <ChevronRight size={20} className="ml-2" />
                         </Button>
-                        <button className="w-16 h-16 rounded-[2rem] bg-white border-2 border-gray-100 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all">
+                        <button
+                            aria-label="Share booking"
+                            onClick={() => {
+                                navigator.clipboard.writeText(window.location.href);
+                                toast.success('Booking link copied to clipboard!');
+                            }}
+                            className="w-16 h-16 rounded-[2rem] bg-white border-2 border-gray-100 flex items-center justify-center text-gray-400 hover:text-primary hover:border-primary transition-all"
+                        >
                             <Share2 size={24} />
                         </button>
                     </div>

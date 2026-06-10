@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../components/Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 export const SitterProfile: React.FC = () => {
   const navigate = useNavigate();
@@ -192,7 +193,9 @@ export const SitterProfile: React.FC = () => {
                                         <img src={img} alt={`Gallery photo ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                     </div>
                                 ))}
-                                <button className="aspect-square rounded-[2.5rem] bg-gray-50 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all group">
+                                <button
+                                    onClick={() => toast('Full photo gallery is coming soon!', { icon: '🖼️' })}
+                                    className="aspect-square rounded-[2.5rem] bg-gray-50 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all group">
                                     <Camera size={32} />
                                     <span className="text-[10px] font-black uppercase tracking-widest mt-2 group-hover:text-primary italic">View All</span>
                                 </button>

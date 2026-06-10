@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Star, MapPin, ShieldCheck, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 interface FeaturedSitterCardProps {
   name: string;
@@ -23,6 +24,14 @@ export const FeaturedSitterCard: React.FC<FeaturedSitterCardProps> = ({
   isVerified = true,
   services
 }) => {
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  const toggleFavorite = () => {
+    const next = !isFavorited;
+    setIsFavorited(next);
+    toast.success(next ? 'Added to favorites! ❤️' : 'Removed from favorites');
+  };
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -35,8 +44,13 @@ export const FeaturedSitterCard: React.FC<FeaturedSitterCardProps> = ({
           <span className="text-xs font-bold text-gray-900">{rating}</span>
           <span className="text-[10px] text-gray-500 font-medium">({reviews})</span>
         </div>
-        <button aria-label="Add to favorites" className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-md rounded-full text-gray-400 hover:text-red-500 transition-colors shadow-sm">
-          <Heart size={16} />
+        <button
+          onClick={toggleFavorite}
+          aria-label={isFavorited ? 'Remove from favorites' : 'Add to favorites'}
+          aria-pressed={isFavorited}
+          className={`absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-md rounded-full transition-colors shadow-sm ${isFavorited ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`}
+        >
+          <Heart size={16} fill={isFavorited ? 'currentColor' : 'none'} />
         </button>
         {isVerified && (
           <div className="absolute bottom-3 left-3 bg-success/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">

@@ -11,6 +11,7 @@ import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 import { PetCard } from '../components/PetCard';
 import { motion, AnimatePresence } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 export const UserProfile: React.FC = () => {
   const { user, pets, logout } = useAppStore();
@@ -40,7 +41,11 @@ export const UserProfile: React.FC = () => {
                     <User size={48} />
                   </div>
                 )}
-                <button className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <button
+                  aria-label="Change profile photo"
+                  onClick={() => toast('Profile photo upload is coming soon!', { icon: '📸' })}
+                  className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"
+                >
                   <Camera size={24} />
                 </button>
               </div>
@@ -195,7 +200,10 @@ export const UserProfile: React.FC = () => {
                     ))}
                     
                     {/* Add Empty State Card */}
-                    <button className="flex flex-col items-center justify-center p-8 rounded-[2.5rem] border-2 border-dashed border-gray-200 hover:border-primary/40 hover:bg-white transition-all group min-h-[220px]">
+                    <button
+                      onClick={() => toast('Adding more pet profiles is coming soon!', { icon: '🐾' })}
+                      className="flex flex-col items-center justify-center p-8 rounded-[2.5rem] border-2 border-dashed border-gray-200 hover:border-primary/40 hover:bg-white transition-all group min-h-[220px]"
+                    >
                       <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center text-gray-300 group-hover:bg-primary/10 group-hover:text-primary transition-all mb-4">
                         <Plus size={32} />
                       </div>

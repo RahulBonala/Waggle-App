@@ -11,6 +11,7 @@ import { FeaturedSitterCard } from '../components/FeaturedSitterCard';
 import { mockSitters, REVIEWS, SERVICES } from '../data/mockData';
 
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 // @ts-expect-error -- swiper CSS imports have no type declarations
@@ -286,14 +287,20 @@ export const LandingPage: React.FC = () => {
                 <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">Care for your pet, in your pocket.</h2>
                 <p className="text-blue-100 text-xl mb-12">Get the Waggle app and manage bookings, track walks, and more on the go.</p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <button className="bg-black text-white px-8 py-4 rounded-2xl flex items-center gap-3 hover:scale-105 transition-transform">
+                  <button
+                    onClick={() => toast('The Waggle iOS app is coming soon!', { icon: '📱' })}
+                    className="bg-black text-white px-8 py-4 rounded-2xl flex items-center gap-3 hover:scale-105 transition-transform"
+                  >
                     <Apple size={28} />
                     <div className="text-left">
                       <p className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Download on the</p>
                       <p className="text-lg font-bold leading-none">App Store</p>
                     </div>
                   </button>
-                  <button className="bg-black text-white px-8 py-4 rounded-2xl flex items-center gap-3 hover:scale-105 transition-transform">
+                  <button
+                    onClick={() => toast('The Waggle Android app is coming soon!', { icon: '📱' })}
+                    className="bg-black text-white px-8 py-4 rounded-2xl flex items-center gap-3 hover:scale-105 transition-transform"
+                  >
                     <PlayCircle size={28} />
                     <div className="text-left">
                       <p className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Get it on</p>
