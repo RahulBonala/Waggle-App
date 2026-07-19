@@ -2,14 +2,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FF6B35',
-        'primary-dark': '#E85A2A',
+        primary: '#ff6b1a',
+        'primary-dark': '#c2410c',
         'trust-blue': '#1A4D8C',
         success: '#10B981',
         warning: '#F59E0B',
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         '2xl': '1rem',
