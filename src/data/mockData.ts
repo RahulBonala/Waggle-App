@@ -100,7 +100,7 @@ export const CITIES = [
 ];
 
 export const SERVICES = [
-  { name: 'Dog Walking', icon: Dog, price: '₹199', color: '#ff6b1a' },
+  { name: 'Dog Walking', icon: Dog, price: '₹199', color: '#c2410c' },
   { name: 'Pet Sitting', icon: Calendar, price: '₹499', color: '#1A4D8C' },
   { name: 'Grooming', icon: Scissors, price: '₹799', color: '#10B981' },
   { name: 'Vet Visit', icon: Stethoscope, price: '₹999', color: '#F59E0B' }

@@ -53,13 +53,13 @@ export const Tracking: React.FC = () => {
                           fill="#064e3b" stroke="#059669" strokeWidth="2" />
 
                     {/* Walking Path */}
-                    <circle cx="350" cy="250" r="10" fill="#ff6b1a" fillOpacity="0.2">
+                    <circle cx="350" cy="250" r="10" fill="#c2410c" fillOpacity="0.2">
                         <animate attributeName="r" values="10;20;10" dur="3s" repeatCount="indefinite" />
                     </circle>
                     <path
                         d="M 350 250 Q 400 200 450 250 T 550 300 T 450 400 T 350 450"
                         fill="none"
-                        stroke="#ff6b1a"
+                        stroke="#c2410c"
                         strokeWidth="8"
                         strokeLinecap="round"
                         strokeDasharray="1000"
@@ -74,8 +74,8 @@ export const Tracking: React.FC = () => {
                             repeatCount="indefinite"
                             path="M 350 250 Q 400 200 450 250 T 550 300 T 450 400 T 350 450"
                         />
-                        <circle r="12" fill="#ff6b1a" stroke="white" strokeWidth="3" />
-                        <circle r="24" fill="#ff6b1a" fillOpacity="0.1">
+                        <circle r="12" fill="#c2410c" stroke="white" strokeWidth="3" />
+                        <circle r="24" fill="#c2410c" fillOpacity="0.1">
                            <animate attributeName="r" values="12;30;12" dur="1.5s" repeatCount="indefinite" />
                            <animate attributeName="opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
                         </circle>

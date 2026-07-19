@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #ff6b1a; /* signature orange (Rahul Orange) */
-  --primary-dark: #c2410c; /* deep orange: hover + AA text on light */
+  /* Rahul Orange v1.1 — on this light site the working primary is the deep
+     700 shade so every text/fill pairing passes WCAG AA; the bright 500 is
+     reserved for decorative art and large display moments. */
+  --primary: #c2410c;
+  --primary-dark: #9a3412; /* hover for white-on-primary fills */
+  --primary-bright: #ff6b1a; /* decorative/brand-art only, never small text on light */
+  --primary-soft: #ffe4d3;
+  --primary-faint: #fff5ee;
   --trust-blue: #1A4D8C;
   --success: #10B981;
   --warning: #F59E0B;
@@ -14,6 +20,9 @@
 @theme {
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+  --color-primary-bright: var(--primary-bright);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-faint: var(--primary-faint);
   --color-trust-blue: var(--trust-blue);
   --color-success: var(--success);
   --color-warning: var(--warning);
