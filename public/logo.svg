@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Waggle India — Walks &amp; Care">
+  <!-- Rahul Mark System v1 — Data pair (trust-blue field / #fbf7f0 glyph)
+       Reduced from the existing Waggle wordmark. The field keeps the trust-blue
+       token (#1A4D8C, live in Waggle-App/src/index.css) under the design
+       language's data-colour exception: in a pet-care marketplace the blue is
+       carrying "verified", not decorating. The swoosh keeps the orange, stepped
+       to 400 (#ff8a42) so it clears 3:1 on the blue for non-text contrast. -->
+  <rect width="512" height="512" rx="114" fill="#1A4D8C"/>
+  <rect x="6" y="6" width="500" height="500" rx="108" fill="none" stroke="#fbf7f0" stroke-opacity="0.22" stroke-width="6"/>
+  <svg x="116" y="116" width="280" height="280" viewBox="0 0 24 24" fill="none">
+    <!-- the walk -->
+    <path d="M2.2 20.9C6.8 17.9 16 17.4 21.8 20.4" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- the paw: the one filled element -->
+    <g fill="#fbf7f0">
+      <ellipse cx="12.2" cy="12.4" rx="4.4" ry="3.5"/>
+      <circle cx="6.3" cy="8.2" r="1.9"/>
+      <circle cx="10.3" cy="5.7" r="2.05"/>
+      <circle cx="14.8" cy="6" r="1.95"/>
+      <circle cx="18.4" cy="9" r="1.8"/>
+    </g>
+  </svg>
+</svg>
