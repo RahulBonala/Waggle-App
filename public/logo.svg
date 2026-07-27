@@ -1,22 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Waggle India — Walks &amp; Care">
-  <!-- Rahul Mark System v1 — Data pair (trust-blue field / #fbf7f0 glyph)
-       Reduced from the existing Waggle wordmark. The field keeps the trust-blue
-       token (#1A4D8C, live in Waggle-App/src/index.css) under the design
-       language's data-colour exception: in a pet-care marketplace the blue is
-       carrying "verified", not decorating. The swoosh keeps the orange, stepped
-       to 400 (#ff8a42) so it clears 3:1 on the blue for non-text contrast. -->
+  <!-- Rahul Mark System v2 — Data field: trust-blue #1A4D8C / paper glyph, 7.9:1
+       Two prints, walking. The field keeps the trust-blue token (live in
+       Waggle-App/src/index.css) under the design language's data-colour
+       exception: in a pet-care marketplace the blue carries "verified", it is
+       not decoration.
+
+       The second print replaces the wordmark's swoosh, which could not be made
+       to work here. Any roughly horizontal arc under the pads turned the whole
+       mark into a face — pads for eyes, arc for a mouth — and moving it merely
+       made it read as a stray stroke. Two prints say "walks" outright and the
+       diagonal kills the symmetry the face illusion needed.
+
+       The trailing print is orange-300 #ffa76e and is marked accent: the mark
+       reads with only the white print, so it is held to the 3:1 floor (it
+       clears 4.4:1). Orange-500 is 2.98:1 on this field and would miss even
+       that. -->
   <rect width="512" height="512" rx="114" fill="#1A4D8C"/>
-  <rect x="6" y="6" width="500" height="500" rx="108" fill="none" stroke="#fbf7f0" stroke-opacity="0.22" stroke-width="6"/>
-  <svg x="116" y="116" width="280" height="280" viewBox="0 0 24 24" fill="none">
-    <!-- the walk -->
-    <path d="M2.2 20.9C6.8 17.9 16 17.4 21.8 20.4" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round"/>
-    <!-- the paw: the one filled element -->
+  <svg x="84" y="84" width="344" height="344" viewBox="0 0 24 24">
+    <g fill="#ffa76e" data-role="accent">
+      <ellipse cx="4.4" cy="19.6" rx="2.6" ry="2.1"/>
+      <circle cx="1.5" cy="16.5" r="1.15"/>
+      <circle cx="4.4" cy="14.9" r="1.2"/>
+      <circle cx="7.4" cy="16.3" r="1.15"/>
+    </g>
     <g fill="#fbf7f0">
-      <ellipse cx="12.2" cy="12.4" rx="4.4" ry="3.5"/>
-      <circle cx="6.3" cy="8.2" r="1.9"/>
-      <circle cx="10.3" cy="5.7" r="2.05"/>
-      <circle cx="14.8" cy="6" r="1.95"/>
-      <circle cx="18.4" cy="9" r="1.8"/>
+      <ellipse cx="13.4" cy="11.4" rx="5.2" ry="4.2"/>
+      <circle cx="6.6" cy="6.4" r="2.3"/>
+      <circle cx="11.4" cy="3.4" r="2.45"/>
+      <circle cx="16.7" cy="3.8" r="2.35"/>
+      <circle cx="20.8" cy="7.3" r="2.15"/>
     </g>
   </svg>
 </svg>
